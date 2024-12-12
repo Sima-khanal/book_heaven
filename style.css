@@ -1,0 +1,630 @@
+/* Reset some default styles for the link elements */
+a, a:link, a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Style for the header container */
+header {
+  background-color: #fff;
+  padding: 0.8rem 2rem; /* Reduced padding */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo style */
+header .logo {
+  font-size: 1.75rem; /* Slightly smaller logo size */
+  font-weight: bold;
+  color: #333;
+}
+
+/* Navigation menu styles */
+header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 15px; /* Reduced gap */
+}
+
+/* Style for the list items in the navigation */
+header nav li {
+  display: inline-block;
+}
+
+/* Style for links inside the navigation */
+header nav li a {
+  text-decoration: none;
+  font-size: 0.9rem; /* Smaller font size for links */
+  color: #333;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, .75);
+  transition: border 200ms ease, color 200ms ease;
+  position: relative;
+}
+
+/* Border styling for links when hovered or visited */
+header nav li a:link, header nav li a:visited {
+  border-bottom: 5px solid rgba(0, 0, 0, 0);
+}
+
+/* Hover effect to change color and add border */
+header nav li a:hover {
+  color: #007BFF;
+  border-bottom: 5px solid #007BFF;
+}
+
+/* Style for the pseudo-element "after" applied to the last link */
+header nav li a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: rgba(0, 0, 0, 0.1);
+  transition: background-color 200ms ease;
+}
+
+/* Hover effect for the "after" pseudo-element */
+header nav li a:hover::after {
+  background-color: #007BFF;
+}
+
+/* Ensure responsiveness */
+@media (max-width: 768px) {
+  /* Adjust the hero section's font size and padding */
+  .hero-text h1 {
+      font-size: 2.5rem;
+  }
+
+  .hero-text h2 {
+      font-size: 1.5rem;
+  }
+
+  .hero-text p {
+      font-size: 1rem;
+  }
+
+  .hero-buttons a {
+      font-size: 0.875rem;
+      padding: 0.5rem 1.5rem;
+  }
+
+  /* Adjust navbar for smaller screens */
+  header {
+    padding: 0.5rem 1rem; /* Reduced padding for smaller screens */
+  }
+
+  header nav ul {
+    gap: 10px; /* Further reduce gap for smaller screens */
+  }
+
+  header .logo {
+    font-size: 1.5rem; /* Make logo smaller on mobile */
+  }
+}
+
+/* Additional responsiveness for smaller devices */
+@media (max-width: 480px) {
+  header .logo {
+    font-size: 1.2rem; /* Even smaller logo on very small screens */
+  }
+  header nav ul {
+    gap: 8px; /* Reduce the gap even further */
+  }
+}
+
+/* Hero Section Styles */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  background-image: url('https://media4.giphy.com/media/EyYYkV1bqr8Mo/200.webp?cid=ecf05e477hp6s6qx3fg43sbc85khdd55r8kibtil1v89r6jr&ep=v1_gifs_search&rid=200.webp&ct=g'); /* Add the path to your background image */
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem;
+  box-sizing: border-box;
+}
+
+/* Styling for the text in the hero section */
+.hero-text {
+  max-width: 800px;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.hero-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.hero-text p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+/* Styling for the buttons */
+.hero-buttons a {
+  text-decoration: none;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  color: #fff;
+  margin: 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero-buttons .btn-secondary {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero-buttons .btn-secondary:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+  transform: scale(1.05);
+}
+
+/* Ensure responsiveness */
+@media (max-width: 768px) {
+  .hero-text h1 {
+      font-size: 2.5rem;
+  }
+
+  .hero-text h2 {
+      font-size: 1.5rem;
+  }
+
+  .hero-text p {
+      font-size: 1rem;
+  }
+
+  .hero-buttons a {
+      font-size: 0.875rem;
+      padding: 0.5rem 1.5rem;
+  }
+}
+
+/* Container for the images */
+.image-gallery {
+  position: relative;
+  width: 100%;
+  height: 500px; /* You can adjust the height as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Common styles for all image frames */
+.image-frame {
+  position: absolute;
+  border: 4px solid white; /* Optional, for border around images */
+  padding: 10px;
+  border-radius: 10px;
+  transition: transform 0.3s ease, z-index 0.3s ease;
+}
+
+/* Individual styles for the image frames */
+.frame-1 {
+  top: 0;
+  left: 0;
+  width: 30%;
+  z-index: 4;
+}
+
+.frame-2 {
+  top: 40%;
+  left: 30%;
+  width: 35%;
+  z-index: 3;
+}
+
+.frame-3 {
+  top: 20%;
+  left: 60%;
+  width: 25%;
+  z-index: 2;
+}
+
+.frame-4 {
+  top: 50%;
+  left: 10%;
+  width: 40%;
+  z-index: 1;
+}
+
+/* Styling for the images inside the frames */
+.image-frame img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+/* Responsiveness for different screen sizes */
+@media (max-width: 1200px) {
+  .image-frame {
+      width: 45%;
+  }
+
+  .frame-1 {
+      top: 10%;
+      left: 10%;
+  }
+
+  .frame-2 {
+      top: 40%;
+      left: 50%;
+  }
+
+  .frame-3 {
+      top: 10%;
+      left: 50%;
+  }
+
+  .frame-4 {
+      top: 60%;
+      left: 10%;
+  }
+}
+
+@media (max-width: 768px) {
+  .image-frame {
+      width: 80%;
+  }
+
+  .frame-1 {
+      top: 0;
+      left: 10%;
+  }
+
+  .frame-2 {
+      top: 30%;
+      left: 10%;
+  }
+
+  .frame-3 {
+      top: 60%;
+      left: 10%;
+  }
+
+  .frame-4 {
+      top: 90%;
+      left: 10%;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-frame {
+      width: 100%;
+  }
+
+  .frame-1 {
+      top: 0;
+      left: 0;
+  }
+
+  .frame-2 {
+      top: 30%;
+      left: 0;
+  }
+
+  .frame-3 {
+      top: 60%;
+      left: 0;
+  }
+
+  .frame-4 {
+      top: 90%;
+      left: 0;
+  }
+}
+
+
+#about {
+  background-color: #f9f9f9; /* Light background color */
+  padding: 60px 0; /* Space at the top and bottom */
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto; /* Centers the container */
+  padding: 20px;
+  text-align: center;
+}
+
+#about h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+#about p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 20px;
+  text-align: justify; /* Justifies the text */
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#about p strong {
+  font-weight: bold;
+  color: #0077b6; /* Accent color for the app name */
+}
+
+@media (max-width: 768px) {
+  #about h2 {
+    font-size: 2rem; /* Smaller header font on mobile */
+  }
+
+  #about p {
+    font-size: 1rem; /* Smaller font for paragraphs on mobile */
+  }
+}
+
+
+#difference {
+  background-color: #f5f5f5;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.difference-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h2 {
+  font-family: 'Mono', cursive;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.intro-text {
+  font-family: 'Mono', cursive;
+  font-size: 1.2rem;
+  color: #0077b6;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#difference p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: justify;
+}
+
+.typography-example {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.image-container {
+  position: relative;
+}
+
+.image-container img {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.label {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-size: 1.2rem;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.arrow-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow {
+  font-size: 2.5rem;
+  color: #0077b6;
+  font-weight: bold;
+  margin: 0 20px;
+}
+
+@media (max-width: 768px) {
+  h2 {
+    font-size: 2rem;
+  }
+  .typography-example {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .arrow {
+    font-size: 2rem;
+  }
+}
+
+
+#proofing {
+  background-color: #f9f9f9;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.proofing-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h2 {
+  font-family: 'Mono', cursive;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+#proofing p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: justify;
+}
+
+.proofing-example {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.text-container {
+  max-width: 500px;
+}
+
+.text-container p {
+  font-size: 1.2rem;
+  color: #444;
+  font-style: italic;
+  text-align: left;
+}
+
+.image-container {
+  flex-shrink: 0;
+  max-width: 400px;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .proofing-example {
+    flex-direction: column;
+    gap: 20px;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  .image-container img {
+    max-width: 100%;
+  }
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.social-icon {
+  color: #fff;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #0073e6;
+}
+
+
+.auth-links {
+  margin-bottom: 30px;
+}
+
+.auth-link {
+  color: #fff;
+  font-size: 1.2rem;
+  text-decoration: none;
+  margin: 0 15px;
+  transition: color 0.3s ease;
+}
+
+.auth-link:hover {
+  color: #0073e6;
+}
+
+.footer-logo {
+  margin-bottom: 20px;
+}
+
+.footer-logo img {
+  max-width: 150px;
+  margin-bottom: 10px;
+}
+
+.footer-logo p {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.copyright {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+@media (max-width: 768px) {
+  .social-links {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .auth-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+}
